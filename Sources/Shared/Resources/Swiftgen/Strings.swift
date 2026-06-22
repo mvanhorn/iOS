@@ -429,6 +429,12 @@ public enum L10n {
       /// Notify when run
       public static var title: String { return L10n.tr("Localizable", "app_intents.notify_when_run.title") }
     }
+    public enum OpenAppSettings {
+      /// Opens the companion app directly in its settings
+      public static var description: String { return L10n.tr("Localizable", "app_intents.open_app_settings.description") }
+      /// Open app settings
+      public static var title: String { return L10n.tr("Localizable", "app_intents.open_app_settings.title") }
+    }
     public enum OpenExperimentalDashboard {
       /// Opens the experimental dashboard
       public static var description: String { return L10n.tr("Localizable", "app_intents.open_experimental_dashboard.description") }
@@ -2118,8 +2124,16 @@ public enum L10n {
       }
     }
     public enum FrequentUpdates {
+      /// Allows Home Assistant to update Live Activities up to once per second. Enable in Settings u203A %@ u203A Live Activities.
+      public static func footer(_ p1: Any) -> String {
+        return L10n.tr("Localizable", "live_activity.frequent_updates.footer", String(describing: p1))
+      }
       /// Frequent Updates
       public static var title: String { return L10n.tr("Localizable", "live_activity.frequent_updates.title") }
+    }
+    public enum Privacy {
+      /// Live Activity content is visible on your Lock Screen and Dynamic Island without Face ID or Touch ID. Choose what you display carefully.
+      public static var message: String { return L10n.tr("Localizable", "live_activity.privacy.message") }
     }
     public enum Sample {
       public enum Alarm {
@@ -2214,6 +2228,8 @@ public enum L10n {
     public enum Section {
       /// Active Activities
       public static var active: String { return L10n.tr("Localizable", "live_activity.section.active") }
+      /// Privacy
+      public static var privacy: String { return L10n.tr("Localizable", "live_activity.section.privacy") }
       /// Status
       public static var status: String { return L10n.tr("Localizable", "live_activity.section.status") }
     }
